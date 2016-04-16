@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="nat" name="com.hzih.sslvpn.domain.Nat">
+    <id access="field" name="id" type="int" column="id">
+      <generator class="increment"/>
+    </id>
+    <property name="bindIp" length="50" access="field" type="string"/>
+    <property name="bindPort" length="50" access="field" type="string"/>
+    <property name="protocol" length="50" access="field" type="string"/>
+    <property name="level" length="4" access="field" type="int"/>
+    <property name="targetIp" length="50" access="field" type="string"/>
+    <property name="targetPort" length="50" access="field" type="string"/>
+    <property name="count" length="11" access="field" type="int"/>
+
+    <!--inverse="true" 对集合的改动不会修改对应的关系表关系-->
+    <set cascade="save-update" table="user_nats" name="userSet" inverse="true" lazy="false">
+      <key column="nat_id" />
+      <many-to-many class="com.hzih.sslvpn.domain.User">
+        <column name="user_id" />
+      </many-to-many>
+    </set>
+  </class>
+</hibernate-mapping>

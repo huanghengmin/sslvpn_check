@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class table="client_log" name="com.hzih.sslvpn.domain.ClientLog">
+    <id access="field" name="id" type="long" column="id" length="11">
+      <generator class="increment"/>
+    </id>
+    <property name="CN" length="20" access="field" type="string"/>
+    <property name="SN" length="50"  access="field" type="string"/>
+    <property name="O" length="20"  access="field" type="string"/>
+    <property name="OU" length="20"  access="field" type="string"/>
+    <property name="L" length="20"  access="field" type="string"/>
+    <property name="ST" length="20"  access="field" type="string"/>
+    <property name="phone" length="20"  access="field" type="string"/>
+    <property name="idcard" length="20"  access="field" type="string"/>
+    <property name="email" length="20"  access="field" type="string"/>
+    <property name="sourceip" length="20"  access="field" type="string"/>
+    <property name="sourceport" length="20"  access="field" type="string"/>
+    <property name="accessurl" length="200"  access="field" type="string"/>
+    <property name="result" length="3"  access="field" type="string"/>
+    <property name="upbytes" length="10"  access="field" type="string"/>
+    <property name="downbytes" length="10"  access="field" type="string"/>
+    <property name="audittype" length="3"  access="field" type="string"/>
+    <property name="datetime"  access="field" type="java.util.Date"/>
+  </class>
+</hibernate-mapping>

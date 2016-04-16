@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class table="trustterminals" name="com.hzih.sslvpn.domain.TrustTerminal">
+        <id access="field" name="id" type="long" column="id" length="11">
+            <generator class="increment"/>
+        </id>
+
+        <property name="status" column="status" access="field" type="int"/>
+        <property name="ip" column="ip" access="field" length="15" type="string"/>
+        <property name="mac" column="mac" access="field" length="17" type="string"/>
+        <property name="startTime" column="startTime" access="field" length="8" type="string"/>
+        <property name="endTime" column="endTime" access="field" length="8" type="string"/>
+    </class>
+</hibernate-mapping>
